@@ -30,31 +30,13 @@
 		<meta property="og:description" content="Free and fast tech support server with over 200 members">
 		<meta property="og:image" content="https://techsupportcentral.github.io/tsc.png">
 	</head>
-	<body bgcolor="#323232"> 
+	<body bgcolor="#323232">
 		<div id="Container">
-			<div id="Header">
-			<img src="tsc-banner.jpg" alt="Image Not Found" style="width:1000px; height:270px;">
-			</div>
-			<div id="Menu">
-				<ul class="nav">
-					<li> <a href="index.html"> Home </a> </li>
-					<li> <a href="https://discord.gg/8JkS8xWgbU"> Join the Server </a> </li>
-					<li> <a href="support-team.html"> Support Team Application </a> </li>
-					<li> <a href="moderator.html"> Moderator Application </a> </li>
-					<li> <a href="#Footer"> Social Media </a> </li>
-					<li> <a href="https://github.com/TechSupportCentral"> GitHub </a> </li>
-				</ul>
-			</div>
+			<?php include 'header.php';?>
 			<div id="MainBody">
 				<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScflvCOhO50vGRl7_SPkQBshyIDGzj4mhdpIn7oXQzidxQSig/viewform?embedded=true" width="640" height="2270" frameborder="0" marginheight="0" marginwidth="0">Loading&#8230;</iframe>
 			</div>
-			<div id="Footer">
-				<br>
-				<a href="LICENSE.html" class="fa fa-balance-scale"></a>
-				<a href="https://instagram.com/TechSupportCentral/" class="fa fa-instagram"></a>
-				<a href="https://github.com/TechSupportCentral" class="fa fa-github"></a>
-				<a href="https://youtube.com/channel/UCQgYpA7iNL-xhBM-UIlLNiw/featured?sub_confirmation=1" class="fa fa-youtube"></a>
-			</div>
+			<?php include 'footer.php';?>
 		</div>
 	</body>
 </html>
