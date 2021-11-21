@@ -5,7 +5,7 @@
 		<style>
 			#SideBar {
 			width: 375px;
-			height: 850px;
+			height: 800px;
 			background-color: #D66225;
 			float: right;
 			text-align: center;
@@ -13,24 +13,17 @@
 
 			#MainBody {
 			width: 625px;
-			height: 850px;
+			height: 800px;
 			background-color: #ffffff;
 			float: left;
 			text-align: center;
 			}
-
-			#Footer {
-			height: 100px;
-			background: #595959;
-			text-align: center;
-			clear: both;
-			}
 		</style>
-		<?php include 'head.php';?>
+		<?php include 'includes/head.php';?>
 	</head>
 	<body bgcolor="#323232">
 		<div id="Container">
-			<?php include 'header.php';?>
+			<?php include 'includes/header.php';?>
 			<div id="SideBar">
 				<br><iframe src="https://discord.com/widget?id=824042976371277884&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 			</div>
@@ -45,7 +38,7 @@
 				<br>
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/wOuu1zywK_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
-			<?php include 'footer.php';?>
+			<?php include 'includes/footer.php';?>
 		</div>
 	</body>
 </html>

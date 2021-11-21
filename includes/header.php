@@ -4,10 +4,10 @@
 <div id="Menu">
 	<ul class="nav">
 		<li> <a href="index.php"> Home </a> </li>
-		<li> <a href="https://discord.gg/8JkS8xWgbU"> Join the Server </a> </li>
+		<li> <a href="https://discord.gg/8JkS8xWgbU"> Join Server </a> </li>
 		<li> <a href="support-team.php"> Support Team Application </a> </li>
 		<li> <a href="moderator.php"> Moderator Application </a> </li>
+		<li> <a href="appeal.php"> Ban Appeal </a> </li>
 		<li> <a href="#Footer"> Social Media </a> </li>
-		<li> <a href="https://github.com/TechSupportCentral"> GitHub </a> </li>
 	</ul>
 </div>
