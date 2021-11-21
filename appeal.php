@@ -51,13 +51,13 @@ get_user(true);
 			} elseif ($_GET['form'] == "done") {
 				echo '
 				<div class="center">
-					<h1> Form sent successfully. </h1>
+					<h1> Appeal sent successfully. You will be notified of whether your appeal was accepted via the email you signed up for Discord with. </h1>
 				</div>
 				';
 			} elseif ($_GET['form'] == "fail") {
 				echo '
 				<div class="center">
-					<h1> Something went wrong sending the form. Please try again. </h1>
+					<h1> Something went wrong sending the appeal. Please try again. </h1>
 				</div>
 				';
 			} else {
