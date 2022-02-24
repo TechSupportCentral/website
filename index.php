@@ -35,6 +35,7 @@
 					• Tech Discussions and show off your personal setups <br><br>
 					• Recommendations from tablets to PCs to mobiles, <br> whatever you need, we can help! <br><br>
 					• We're always looking for more support team members, <br> so apply if you wish and help out others! </h3>
+				<h3> We also have a Matrix Space at <a href="https://matrix.to/#/#techsupportcentral:matrix.org">#techsupportcentral:matrix.org</a>! </h3>
 				<br>
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/wOuu1zywK_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
