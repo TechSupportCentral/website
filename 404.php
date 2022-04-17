@@ -9,7 +9,8 @@
 				padding: 20px 20px;
 			}
 		</style>
-		<?php include 'includes/head.html';?>
+		<link rel="stylesheet" type="text/css" href="includes/styles.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body bgcolor="#323232">
 		<div id="Container">
