@@ -11,18 +11,18 @@ get_user(true);
 		<title> Ban Appeal | Tech Support Central </title>
 		<style>
 			#MainBody {
-			height: 240px;
-			border-radius: 5px;
-			background-color: #f2f2f2;
-			padding: 20px 20px;
+				height: 240px;
+				border-radius: 5px;
+				background-color: #f2f2f2;
+				padding: 20px 20px;
 			}
 		</style>
-		<?php include 'includes/head.php';?>
+		<?php include 'includes/head.html';?>
 	</head>
 	<body bgcolor="#323232">
 		<div id="Container">
 			<?php
-			include 'includes/header.php';
+			include 'includes/header.html';
 			echo '<div id="MainBody">';
 			if (isset($_SESSION['username'])) {
 				if (substr($_SESSION['user_avatar'], 0, 2) == "a_") {
@@ -32,7 +32,7 @@ get_user(true);
 				}
 				echo '
 				<br>
-				<form action="submit-form.php" method=”post”>
+				<form action="submit-form.php" method="post">
 					<label for="q1"> Why were you banned? </label><br>
 					<input type="text" name="q1"><br>
 
@@ -69,7 +69,7 @@ get_user(true);
 				';
 			}
 			echo '</div>';
-			include 'includes/footer.php';
+			include 'includes/footer.html';
 			?>
 		</div>
 	</body>

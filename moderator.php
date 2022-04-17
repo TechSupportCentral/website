@@ -11,18 +11,18 @@ get_user();
 		<title> Moderator Application | Tech Support Central </title>
 		<style>
 			#MainBody {
-			height: 750px;
-			border-radius: 5px;
-			background-color: #f2f2f2;
-			padding: 20px 20px;
+				height: 750px;
+				border-radius: 5px;
+				background-color: #f2f2f2;
+				padding: 20px 20px;
 			}
 		</style>
-		<?php include 'includes/head.php';?>
+		<?php include 'includes/head.html';?>
 	</head>
 	<body bgcolor="#323232">
 		<div id="Container">
 			<?php
-			include 'includes/header.php';
+			include 'includes/header.html';
 			echo '<div id="MainBody">';
 			if (isset($_SESSION['username'])) {
 				if (substr($_SESSION['user_avatar'], 0, 2) == "a_") {
@@ -32,7 +32,7 @@ get_user();
 				}
 				echo '
 				<br>
-				<form action="submit-form.php" method=”post”>
+				<form action="submit-form.php" method="post">
 					<label for="q1"> If a member is doing something against our rules (i.e. spamming, sending NSFW), what do you do? </label><br>
 					<input type="radio" id="q1o1" name="q1" value="Leave it and see what happens">
 					<label for="q1o1"> Leave it and see what happens </label><br>
@@ -110,7 +110,7 @@ get_user();
 				';
 			}
 			echo '</div>';
-			include 'includes/footer.php';
+			include 'includes/footer.html';
 			?>
 		</div>
 	</body>

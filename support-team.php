@@ -11,18 +11,18 @@ get_user();
 		<title> Support Team Application | Tech Support Central </title>
 		<style>
 			#MainBody {
-			height: 550px;
-			border-radius: 5px;
-			background-color: #f2f2f2;
-			padding: 20px 20px;
+				height: 550px;
+				border-radius: 5px;
+				background-color: #f2f2f2;
+				padding: 20px 20px;
 			}
 		</style>
-		<?php include 'includes/head.php';?>
+		<?php include 'includes/head.html';?>
 	</head>
 	<body bgcolor="#323232">
 		<div id="Container">
 			<?php
-			include 'includes/header.php';
+			include 'includes/header.html';
 			echo '<div id="MainBody">';
 			if (isset($_SESSION['username'])) {
 				if (substr($_SESSION['user_avatar'], 0, 2) == "a_") {
@@ -31,7 +31,7 @@ get_user();
 					$extension = ".png";
 				}
 				echo '
-				<form action="submit-form.php" method=”post”>
+				<form action="submit-form.php" method="post">
 					<label for="q1"> Are you currently or have you previously provided Tech Support in any other discord servers or a real life career? </label><br>
 					<input type="radio" id="q1o1" name="q1" value="Yes, I currently do.">
 					<label for="q1o1"> Yes, I currently do. </label><br>
@@ -99,7 +99,7 @@ get_user();
 				';
 			}
 			echo '</div>';
-			include 'includes/footer.php';
+			include 'includes/footer.html';
 			?>
 		</div>
 	</body>
