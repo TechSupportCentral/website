@@ -33,7 +33,7 @@ get_user();
 				echo '
 				<br>
 				<form action="submit-form.php" method="post">
-					<label for="q1"> If a member is doing something against our rules (i.e. spamming, sending NSFW), what do you do? </label><br>
+					<label for="q1" style="font-weight: bold"> If a member is doing something against our rules (i.e. spamming, sending NSFW), what do you do? </label><br>
 					<input type="radio" id="q1o1" name="q1" value="Leave it and see what happens">
 					<label for="q1o1"> Leave it and see what happens </label><br>
 					<input type="radio" id="q1o2" name="q1" value="Mute the member">
@@ -43,7 +43,7 @@ get_user();
 					<input type="radio" id="q1o4" name="q1" value="Issue a warning">
 					<label for="q1o4"> Issue a warning </label><br>
 					<br>
-					<label for="q2"> If you or another member receives self promotion, what do you do? </label><br>
+					<label for="q2" style="font-weight: bold"> If you or another member receives self promotion, what do you do? </label><br>
 					<input type="radio" id="q2o1" name="q2" value="Do nothing">
 					<label for="q2o1"> Do nothing </label><br>
 					<input type="radio" id="q2o2" name="q2" value="Mute the member">
@@ -53,7 +53,7 @@ get_user();
 					<input type="radio" id="q2o4" name="q2" value="Issue a warning">
 					<label for="q2o4"> Issue a warning </label><br>
 					<br>
-					<label for="q3"> If a member asks for help or advice with cracked/illegal content, what do you do? </label><br>
+					<label for="q3" style="font-weight: bold"> If a member asks for help or advice with cracked/illegal content, what do you do? </label><br>
 					<input type="radio" id="q3o1" name="q3" value="Do nothing">
 					<label for="q3o1"> Do nothing </label><br>
 					<input type="radio" id="q3o2" name="q3" value="Ban the member">
@@ -63,22 +63,22 @@ get_user();
 					<input type="radio" id="q3o4" name="q3" value="Inform the member publicly of our rules and that we cannot offer any help.">
 					<label for="q3o4"> Inform the member publicly of our rules and that we cannot offer any help. </label><br>
 					<br>
-					<label for="q4"> We ask you to enable Developer Mode in Discord settings so you can retrieve a user ID to make it easier to sanction a member. </label><br>
+					<label for="q4" style="font-weight: bold"> We ask you to enable Developer Mode in Discord settings so you can retrieve a user ID to make it easier to sanction a member. </label><br>
 					<input type="radio" id="q4o1" name="q4" value="I understand; I will enable developer mode.">
 					<label for="q4o1"> I understand; I will enable developer mode. </label><br>
 					<input type="radio" id="q4o2" name="q4" value="I understand; I am unsure how to do this and a staff member will show you how to enable this.">
 					<label for="q4o2"> I understand; I am unsure how to do this, so a staff member will show me how to enable this if/when I become a moderator. </label><br>
 					<br>
-					<label for="q5"> If your Mod application gets accepted, you will temporarily receive a "Trial Moderator" role which is a trial period to see if this role is for you. </label><br>
-					<input type="radio" id="q5o1" name="q5" value="I understand.">
+					<label for="q5" style="font-weight: bold"> If your Mod application gets accepted, you will temporarily receive a "Trial Moderator" role which is a trial period to see if this role is for you. </label><br>
+					<input type="checkbox" id="q5o1" name="q5" value="I understand.">
 					<label for="q5o1"> I understand. </label><br>
 					<br>
-					<label for="q6"> Applying for this role means that you have the opportunity to become a Moderator; if you wish to be a Support Team member as well then you can apply via the Support Team application form. </label><br>
-					<input type="radio" id="q6o1" name="q6" value="I understand.">
+					<label for="q6" style="font-weight: bold"> Applying for this role means that you have the opportunity to become a Moderator; if you wish to be a Support Team member as well then you can apply via the Support Team application form. </label><br>
+					<input type="checkbox" id="q6o1" name="q6" value="I understand.">
 					<label for="q6o1"> I understand. </label><br>
 					<br>
-					<label for="q7"> As a moderator, you will have to adhere and follow the rules. </label><br>
-					<input type="radio" id="q7o1" name="q7" value="I understand.">
+					<label for="q7" style="font-weight: bold"> As a moderator, you will have to adhere and follow the rules. </label><br>
+					<input type="checkbox" id="q7o1" name="q7" value="I understand.">
 					<label for="q7o1"> I understand. </label><br>
 					<br>
 					<input type="hidden" name="username" value=' . $_SESSION['username'] . '>
@@ -90,17 +90,9 @@ get_user();
 				</form>
 				';
 			} elseif ($_GET['form'] == "done") {
-				echo '
-				<div class="center">
-					<h1> Form sent successfully. </h1>
-				</div>
-				';
+				echo '<h1 style="text-align: center"> Form sent successfully. </h1>';
 			} elseif ($_GET['form'] == "fail") {
-				echo '
-				<div class="center">
-					<h1> Something went wrong sending the form. Please try again. </h1>
-				</div>
-				';
+				echo '<h1 style="text-align: center"> Something went wrong sending the form. Please try again. </h1>';
 			} else {
 				echo '
 				<div class="center">

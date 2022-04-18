@@ -33,10 +33,10 @@ get_user(true);
 				echo '
 				<br>
 				<form action="submit-form.php" method="post">
-					<label for="q1"> Why were you banned? </label><br>
+					<label for="q1" style="font-weight: bold"> Why were you banned? </label><br>
 					<input type="text" name="q1"><br>
 
-					<label for="q2"> Why do you disagree with the reasoning for your ban? </label><br>
+					<label for="q2" style="font-weight: bold"> Why do you disagree with the reasoning for your ban? </label><br>
 					<input type="text" name="q2"><br>
 
 					<input type="hidden" name="username" value=' . $_SESSION['username'] . '>
@@ -49,17 +49,9 @@ get_user(true);
 				</form>
 				';
 			} elseif ($_GET['form'] == "done") {
-				echo '
-				<div class="center">
-					<h1> Appeal sent successfully. You will be notified of whether your appeal was accepted via the email you signed up for Discord with. </h1>
-				</div>
-				';
+				echo '<h1 style="text-align: center; margin-left: 32px; margin-right: 32px"> Appeal sent successfully. <br><br> You will be notified about whether your appeal was accepted via the email you signed up for Discord with. </h1>';
 			} elseif ($_GET['form'] == "fail") {
-				echo '
-				<div class="center">
-					<h1> Something went wrong sending the appeal. Please try again. </h1>
-				</div>
-				';
+				echo '<h1 style="text-align: center"> Something went wrong sending the appeal. Please try again. </h1>';
 			} else {
 				echo '
 				<div class="center">

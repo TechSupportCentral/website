@@ -27,16 +27,21 @@
 				<br><iframe src="https://discord.com/widget?id=824042976371277884&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 			</div>
 			<div id="MainBody">
-				<h2 style="color: #D66225; font-weight: bold;"> Welcome to Tech Support Central! </h2>
+				<h2 style="color: #D66225"> Welcome to Tech Support Central! </h2>
 				<br>
 				<h2> What we offer: </h2>
-				<h3 style="text-align: left; margin-left: 25px">
-					• Free and fast tech support for whatever you're <br> having issues with <br><br>
-					• Have tech discussions and show off your personal setups <br><br>
-					• Recommendations from tablets to PCs to game consoles; <br> whatever you need, we can help! <br><br>
-					• We're always looking for more support team members, <br> so apply if you wish and help out others!
+				<h3 style="text-align: left; margin-left: 16px; margin-right: 16px">
+					<ul>
+						<li> Free and fast tech support for whatever your issue may be </li>
+						<br>
+						<li> Tech discussions for you to show off your personal setups </li>
+						<br>
+						<li> Shopping recommendations, from tablets to PCs to game consoles; whatever you need, we can help! </li>
+						<br>
+						<li> We're always looking for more support team members, so apply if you wish and help out others! </li>
+					</ul>
 				</h3>
-				<h3> We also have a <a href="https://matrix.org"> Matrix </a> <a href="https://element.io/blog/spaces-blast-out-of-beta/">Space</a> at <a href="https://matrix.to/#/#techsupportcentral:matrix.org">#techsupportcentral:matrix.org</a>! </h3>
+				<h3> We also have a <a href="https://matrix.org"> Matrix </a><a href="https://element.io/blog/spaces-blast-out-of-beta/">Space</a> at <a href="https://matrix.to/#/#techsupportcentral:matrix.org">#techsupportcentral:matrix.org</a>. </h3>
 				<br>
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/wOuu1zywK_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
