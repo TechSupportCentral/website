@@ -84,12 +84,36 @@ get_user();
 				echo '<h1 style="text-align: center"> Form sent successfully. </h1>';
 			} elseif ($_GET['form'] == "fail") {
 				echo '<h1 style="text-align: center"> Something went wrong sending the form. Please try again. </h1>';
-			} else {
+			} elseif ($_POST['requirements'] == "done") {
 				echo '
 				<div class="center">
 					<h1> Please log in before submitting your application. </h1>
 					<a href=' . url($client_id, "https://www.techsupportcentral.cf/support-team.php", "identify") . '> <img src="login.png", width=512, height=107> </a>
 				</div>
+				';
+			} else {
+				echo '
+				<form action="support-team.php" method="post">
+					<h2 style="text-align: center"> Before you can apply to be support team, you must read the requirements. </h2>
+					<br>
+					<h3> Support Team Requirements: </h3>
+					<ul>
+						<li> <b> Corruption: </b> If a member of the staff team does something they shouldn\'t have, let the owners know. </li>
+						<br>
+						<li> <b> Activity: </b> Support Team members need to be active at least once a week. </li>
+						<br>
+						<li> <b> Experience: </b> You need to have been on the server for at least a week and have a discord account older than a month. </li>
+						<br>
+						<li> <b> Piracy: </b> If someone asks for support with pirated or cracked content, report them to the mod team and don\'t give them support. </li>
+						<br>
+						<li> <b> Misinformation: </b> If you\'re not completely sure about something, ask other members of the support team to fact check it or let them take over the support instead of misinforming the user. </li>
+						<br>
+						<li> <b> Confidence: </b> Be confident in the support you\'re applying. It\'s okay if you don\'t know much but be confident in what you do know. </li>
+						<br>
+					</ul>
+					<input type="hidden" name="requirements" value="done">
+					<input type="submit" value="I have read and met the requirements">
+				</form>
 				';
 			}
 			echo '</div>';

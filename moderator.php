@@ -93,12 +93,34 @@ get_user();
 				echo '<h1 style="text-align: center"> Form sent successfully. </h1>';
 			} elseif ($_GET['form'] == "fail") {
 				echo '<h1 style="text-align: center"> Something went wrong sending the form. Please try again. </h1>';
-			} else {
+			} elseif ($_POST['requirements'] == "done") {
 				echo '
 				<div class="center">
 					<h1> Please log in before submitting your application. </h1>
 					<a href=' . url($client_id, "https://www.techsupportcentral.cf/moderator.php", "identify") . '> <img src="login.png", width=512, height=107> </a>
 				</div>
+				';
+			} else {
+				echo '
+				<form action="moderator.php" method="post">
+					<h2 style="text-align: center"> Before you can apply to be a moderator, you must read the requirements. </h2>
+					<br>
+					<h3> Moderator Requirements: </h3>
+					<ul>
+						<li> <b> Corruption: </b> If a member of the staff team does something they shouldn\'t have, let the owners know. </li>
+						<br>
+						<li> <b> Rules: </b> You need to read the rules and know when to warn, mute, kick, and ban. </li>
+						<br>
+						<li> <b> Activity: </b> Moderators need to be active 6-7 times a week. </li>
+						<br>
+						<li> <b> Experience: </b> You need to have been on the server for at least a month and have a discord account older than 6 months. </li>
+						<br>
+						<li> <b> De-escalation: </b> You must be able to defuse heated situations efficiently and effectively. </li>
+						<br>
+					</ul>
+					<input type="hidden" name="requirements" value="done">
+					<input type="submit" value="I have read and met the requirements">
+				</form>
 				';
 			}
 			echo '</div>';
