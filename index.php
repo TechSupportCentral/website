@@ -24,7 +24,8 @@
 		<div id="Container">
 			<?php include 'includes/header.html';?>
 			<div id="SideBar">
-				<br><iframe src="https://discord.com/widget?id=824042976371277884&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+				<br>
+				<iframe src="https://discord.com/widget?id=824042976371277884&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 			</div>
 			<div id="MainBody">
 				<h2 style="color: #D66225"> Welcome to Tech Support Central! </h2>
