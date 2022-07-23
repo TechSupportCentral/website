@@ -4,6 +4,31 @@ require 'includes/config.php';
 
 init("https://www.techsupportcentral.cf/support-team.php", $client_id, $secret_id);
 get_user();
+get_joined_at();
+
+function age_check() {
+	// Check if user's account creation and server join dates meet requirements
+
+	// Convert user ID to binary
+	$bin = decbin($_SESSION['user_id']);
+	// Extract user creation date (first 38 digits)
+	$sub = substr($bin, 0, 38);
+	/*
+	Convert the substring back to base 10
+	Divide by 1000 (milliseconds to seconds)
+	Add 45 years worth of seconds to convert from Discord timestamp (seconds since 2015) to Unix timestamp (seconds since 1970)
+	*/
+	$epoch = bindec($sub) / 1000 + 1420070400;
+
+	// Check if user creation date is newer than one month ago
+	if ($epoch > (time() - 2629800)) {
+		return 1;
+	// Check if user's join date is newer than one week ago
+	} elseif (strtotime($_SESSION['joined_at']) > (time() - 604800)) {
+		return 2;
+	}
+	return 0;
+}
 ?>
 
 <html>
@@ -24,7 +49,7 @@ get_user();
 			<?php
 			include 'includes/header.html';
 			echo '<div id="MainBody">';
-			if (isset($_SESSION['username'])) {
+			if (isset($_SESSION['username']) && age_check() == 0) {
 				if (substr($_SESSION['user_avatar'], 0, 2) == "a_") {
 					$extension = ".gif";
 				} else {
@@ -80,6 +105,10 @@ get_user();
 					<input type="submit" value="Submit">
 				</form>
 				';
+			} elseif (isset($_SESSION['username']) && age_check() == 1) {
+				echo '<h2 style="text-align: center"> Your Discord account is not old enough (1 month) to become Support Team. <br> Please read the requirements next time. </h2>';
+			} elseif (isset($_SESSION['username']) && age_check() == 2) {
+				echo '<h2 style="text-align: center"> You have not been in TSC for long enough (1 week) to become Support Team. <br> Please read the requirements next time. </h2>';
 			} elseif ($_GET['form'] == "done") {
 				echo '<h1 style="text-align: center"> Form sent successfully. </h1>';
 			} elseif ($_GET['form'] == "fail") {
