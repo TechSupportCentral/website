@@ -1,6 +1,7 @@
 <?php
 require 'includes/config.php';
 $thumbnail = "https://cdn.discordapp.com/avatars/" . $_POST['id'] . "/" . $_POST['avatar'] . $_POST['extension'];
+$sql = mysqli_connect($db['host'], $db['user'], $db['pass'], $db['name'], (int)$db['port']);
 
 if ($_POST['type'] == "support_team") {
 	$title = "New Support Team Application";
@@ -16,6 +17,7 @@ if ($_POST['type'] == "support_team") {
 		$specialty = "  None";
 	}
 
+	$query = "INSERT INTO support_team_applications (userid, username, q1, q2, q3, q4, q5) VALUES (" . $_POST['id'] . ", '" . $_POST['username'] . "', '" . $_POST['q1'] . "', '" . $_POST['q2'] . "', '" . substr($specialty, 2) . "', '" . $_POST['q4'] . "', '" . $_POST['q5'] . "');";
 	$fields = [
 		[
 			"name" => "Submitted by:",
@@ -56,6 +58,7 @@ if ($_POST['type'] == "support_team") {
 } elseif ($_POST['type'] == "moderator") {
 	$title = "New Moderator Application";
 	$color = hexdec("3498db");
+	$query = "INSERT INTO moderator_applications (userid, username, q1, q2, q3, q4, q5, q6, q7) VALUES (" . $_POST['id'] . ", '" . $_POST['username'] . "', '" . $_POST['q1'] . "', '" . $_POST['q2'] . "', '" . $_POST['q3'] . "', '" . $_POST['q4'] . "', '" . $_POST['q5'] . "', '" . $_POST['q6'] . "', '" . $_POST['q7'] . "');";
 	$fields = [
 		[
 			"name" => "Submitted by:",
@@ -106,6 +109,7 @@ if ($_POST['type'] == "support_team") {
 } elseif ($_POST['type'] == "appeal") {
 	$title = "New Ban Appeal";
 	$color = hexdec("e74c3c");
+	$query = "INSERT INTO appeals (userid, username, email, q1, q2) VALUES (" . $_POST['id'] . ", '" . $_POST['username'] . "', '" . $_POST['email'] . "', '" . mysqli_real_escape_string($sql, $_POST['q1']) . "', '" . mysqli_real_escape_string($sql, $_POST['q2']) . "');";
 	$fields = [
 		[
 			"name" => "Submitted by:",
@@ -151,7 +155,7 @@ $json_data = json_encode([
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 
 
-$ch = curl_init( $webhookurl );
+$ch = curl_init( $webhook_url );
 curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
 curl_setopt( $ch, CURLOPT_POST, 1);
 curl_setopt( $ch, CURLOPT_POSTFIELDS, $json_data);
@@ -161,6 +165,9 @@ curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
 $response = curl_exec( $ch );
 curl_close( $ch );
+
+mysqli_query($sql, $query);
+mysqli_close($sql);
 
 if ($response == "") {
 	$success = "done";

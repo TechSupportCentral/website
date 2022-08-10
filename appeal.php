@@ -1,10 +1,4 @@
-<?php
-require 'includes/discord.php';
-require 'includes/config.php';
-
-init("https://www.techsupportcentral.cf/appeal.php", $client_id, $secret_id);
-get_user(true);
-?>
+<?php require 'includes/applications.php';?>
 
 <html>
 	<head>
@@ -23,8 +17,9 @@ get_user(true);
 		<div id="Container">
 			<?php
 			include 'includes/header.html';
+			if (isset($_SESSION['username'])) {$submit = submission_check("appeals", $_SESSION['user_id'], $db);}
 			echo '<div id="MainBody">';
-			if (isset($_SESSION['username'])) {
+			if (isset($_SESSION['username']) && $submit == 0) {
 				if (substr($_SESSION['user_avatar'], 0, 2) == "a_") {
 					$extension = ".gif";
 				} else {
@@ -48,6 +43,8 @@ get_user(true);
 					<input type="submit" value="Submit">
 				</form>
 				';
+			} elseif (isset($_SESSION['username']) && $submit != 0) {
+				echo '<h2 style="text-align: center"> You have already submitted a ban appeal. <br> If it gets accepted, you will be notified. Please be patient. </h2>';
 			} elseif ($_GET['form'] == "done") {
 				echo '<h1 style="text-align: center; margin-left: 32px; margin-right: 32px"> Appeal sent successfully. <br><br> You will be notified about whether your appeal was accepted via the email you signed up for Discord with. </h1>';
 			} elseif ($_GET['form'] == "fail") {

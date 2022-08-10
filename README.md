@@ -2,17 +2,25 @@
 The official website of Tech Support Central; mainly HTML with some PHP thrown in and CSS to make everything look pretty.
 
 ## Usage
-If for some reason you want to use this code, this is all you have to do:
+If for some reason you want to use this code, here is the setup:
 
 1. Make a [Discord Application](https://discord.com/developers/applications) (if you have a bot, you can reuse that application).
 2. Make a [webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) in the Discord channel that you want to receive new staff applications and ban appeals in.
-3. Enter the appropriate values in [config.php](includes/config.php).
+3. Make a MySQL database (to track submission of staff applications and ban appeals) with three tables as specified in [create_db_tables.txt](create_db_tables.txt).
+4. Enter the appropriate values in [config.php](includes/config.php).
 
 config.php:
 ```php
 <?php
 $client_id = "Client ID from the application";
 $secret_id = "Client Secret from the application";
-$webhookurl = "URL from the webhook";
+$webhook_url = "URL from the webhook";
+$db = [
+	"name" => "Name of MySQL database",
+	"host" => "MySQL server (probably localhost)",
+	"port" => "MySQL port (probably 3306)",
+	"user" => "MySQL username",
+	"pass" => "MySQL password"
+];
 ?>
 ```
