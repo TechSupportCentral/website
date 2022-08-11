@@ -17,9 +17,9 @@
 		<div id="Container">
 			<?php
 			include 'includes/header.html';
-			if (isset($_SESSION['username'])) {$submit = submission_check("appeals", $_SESSION['user_id'], $db);}
+			if (isset($_SESSION['username'])) {$submit = submission_check($_SESSION['user_id'], "appeal", $mongo_db, $mongo_uri);}
 			echo '<div id="MainBody">';
-			if (isset($_SESSION['username']) && $submit == 0) {
+			if (isset($_SESSION['username']) && !$submit) {
 				if (substr($_SESSION['user_avatar'], 0, 2) == "a_") {
 					$extension = ".gif";
 				} else {
@@ -43,7 +43,7 @@
 					<input type="submit" value="Submit">
 				</form>
 				';
-			} elseif (isset($_SESSION['username']) && $submit != 0) {
+			} elseif (isset($_SESSION['username']) && $submit) {
 				echo '<h2 style="text-align: center"> You have already submitted a ban appeal. <br> If it gets accepted, you will be notified. Please be patient. </h2>';
 			} elseif ($_GET['form'] == "done") {
 				echo '<h1 style="text-align: center; margin-left: 32px; margin-right: 32px"> Appeal sent successfully. <br><br> You will be notified about whether your appeal was accepted via the email you signed up for Discord with. </h1>';

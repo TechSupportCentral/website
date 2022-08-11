@@ -32,20 +32,12 @@ function age_check($min_age, $min_join) {
 }
 
 // Check if user has already submitted an application
-function submission_check($table, $id, $db) {
-	// Initialize database of applications; return 0 if it fails to connect
-	$sql = mysqli_connect($db['host'], $db['user'], $db['pass'], $db['name'], (int)$db['port']);
-	if (mysqli_connect_errno()) {return 0;}
+function submission_check($id, $type, $mongo_db, $mongo_uri) {
+	// Initialize database of applications
+	$collection = (new MongoDB\Client($mongo_uri)) -> $mongo_db -> applications;
 
 	// Check for applications from the user
-	$result = mysqli_query($sql, 'SELECT * FROM ' . $table . ' WHERE userid = ' . $id);
-
-	// return number of rows
-	$status = mysqli_num_rows($result);
-
-	// Free result, close database, and return status
-	mysqli_free_result($result);
-	mysqli_close($sql);
-	return $status;
+	$result = $collection -> findOne(['id' => $id, 'type' => $type]);
+	return $result;
 }
 ?>

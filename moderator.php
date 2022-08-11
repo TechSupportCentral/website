@@ -20,11 +20,11 @@
 
 			if (isset($_SESSION['username'])) {
 				$age = age_check(15778800, 2629800);
-				$submit = submission_check("moderator_applications", $_SESSION['user_id'], $db);
+				$submit = submission_check($_SESSION['user_id'], "moderator", $mongo_db, $mongo_uri);
 			}
 
 			echo '<div id="MainBody">';
-			if (isset($_SESSION['username']) && $age == 0 && $submit == 0) {
+			if (isset($_SESSION['username']) && $age == 0 && !$submit) {
 				if (substr($_SESSION['user_avatar'], 0, 2) == "a_") {
 					$extension = ".gif";
 				} else {
@@ -93,7 +93,7 @@
 				echo '<h2 style="text-align: center"> Your Discord account is not old enough (6 months) to become a moderator. <br> Please read the requirements next time. </h2>';
 			} elseif (isset($_SESSION['username']) && $age == 2) {
 				echo '<h2 style="text-align: center"> You have not been in TSC for long enough (1 month) to become a moderator. <br> Please read the requirements next time. </h2>';
-			} elseif (isset($_SESSION['username']) && $submit != 0) {
+			} elseif (isset($_SESSION['username']) && $submit) {
 				echo '<h2 style="text-align: center"> You have already submitted a moderator application. <br> If it gets accepted, you will be notified. Please be patient. </h2>';
 			} elseif ($_GET['form'] == "done") {
 				echo '<h1 style="text-align: center"> Form sent successfully. </h1>';
