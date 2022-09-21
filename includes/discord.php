@@ -81,7 +81,7 @@ function get_user($email = null)
 # A function to get user join date on TSC
 function get_joined_at()
 {
-    $url = $GLOBALS['base_url'] . "/api/guilds/824042976371277884/members/" . $_SESSION['user_id'];
+    $url = $GLOBALS['base_url'] . "/api/users/@me/guilds/824042976371277884/member";
     $headers = array('Content-Type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $_SESSION['access_token']);
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -90,7 +90,7 @@ function get_joined_at()
     $response = curl_exec($curl);
     curl_close($curl);
     $results = json_decode($response, true);
-    $_SESSION['joined_at'] = $results['joined_at'];
+    return $results['joined_at'];
 }
 
 # A function to get user guilds | (guilds scope)

@@ -5,7 +5,6 @@ require 'includes/config.php';
 $name = basename($_SERVER['PHP_SELF']);
 init("https://www.techsupportcentral.cf/" . $name, $client_id, $secret_id);
 if ($name == "appeal.php") {get_user(true);} else {get_user();}
-get_joined_at();
 
 // Check if user's account creation and server join dates meet requirements
 function age_check($min_age, $min_join) {
@@ -24,7 +23,7 @@ function age_check($min_age, $min_join) {
 	if ($epoch > (time() - $min_age)) {
 		return 1;
 	// Check if user's join date is newer than minimum
-	} elseif (strtotime($_SESSION['joined_at']) > (time() - $min_join)) {
+	} elseif (strtotime(get_joined_at()) > (time() - $min_join)) {
 		return 2;
 	}
 	// If neither check triggered, requirements are met
