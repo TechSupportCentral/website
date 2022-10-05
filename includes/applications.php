@@ -10,8 +10,8 @@ if ($name == "appeal.php") {get_user(true);} else {get_user();}
 function age_check($min_age, $min_join) {
 	// Convert user ID to binary
 	$bin = decbin($_SESSION['user_id']);
-	// Extract user creation date (first 38 digits)
-	$sub = substr($bin, 0, 38);
+	// Extract user creation date (remove last 22 digits)
+	$sub = substr($bin, 0, -22);
 	/* Convert the substring back to base 10
 	 * Divide by 1000 (milliseconds to seconds)
 	 * Add 45 years worth of seconds to convert from Discord timestamp
