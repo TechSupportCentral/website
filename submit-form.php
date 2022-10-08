@@ -55,8 +55,8 @@ if ($_POST['type'] == "support_team") {
 	];
 	$insert = [
 		"id" => $_POST['id'],
-		"name" => $_POST['username'],
 		"type" => "support_team",
+		"accepted" => "no",
 		"q1" => $_POST['q1'],
 		"q2" => $_POST['q2'],
 		"q3" => substr($specialty, 2),
@@ -115,8 +115,8 @@ if ($_POST['type'] == "support_team") {
 	];
 	$insert = [
 		"id" => $_POST['id'],
-		"name" => $_POST['username'],
 		"type" => "moderator",
+		"accepted" => "no",
 		"q1" => $_POST['q1'],
 		"q2" => $_POST['q2'],
 		"q3" => $_POST['q3'],
@@ -157,9 +157,9 @@ if ($_POST['type'] == "support_team") {
 	];
 	$insert = [
 		"id" => $_POST['id'],
-		"name" => $_POST['username'],
 		"email" => $_POST['email'],
 		"type" => "appeal",
+		"accepted" => "no",
 		"q1" => $_POST['q1'],
 		"q2" => $_POST['q2']
 	];

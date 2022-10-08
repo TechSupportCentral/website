@@ -30,13 +30,13 @@ function age_check($min_age, $min_join) {
 	return 0;
 }
 
-// Check if user has already submitted an application
+// Check if user has already submitted an application and it hasn't been accepted
 function submission_check($id, $type, $mongo_db, $mongo_uri) {
 	// Initialize database of applications
 	$collection = (new MongoDB\Client($mongo_uri)) -> $mongo_db -> applications;
 
 	// Check for applications from the user
-	$result = $collection -> findOne(['id' => $id, 'type' => $type]);
+	$result = $collection -> findOne(['id' => $id, 'type' => $type, 'accepted' => 'no']);
 	return $result;
 }
 ?>
