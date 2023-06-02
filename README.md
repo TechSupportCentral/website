@@ -1,5 +1,5 @@
 # TSC's Website
-The official website of Tech Support Central; mainly HTML with some PHP thrown in and CSS to make everything look pretty.
+The official website of Tech Support Central.
 
 ## Usage
 If for some reason you want to use this code, here is the setup:
