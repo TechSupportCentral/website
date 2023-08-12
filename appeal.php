@@ -53,7 +53,7 @@
 				echo '
 				<div class="center">
 					<h1> Please log in before submitting your appeal. </h1>
-					<a href=' . url($client_id, "https://www.techsupportcentral.cf/appeal.php", "email") . '> <img src="login.png", width=512, height=107> </a>
+					<a href=' . url($client_id, "https://www.techsupportcentral.org/appeal.php", "email") . '> <img src="login.png", width=512, height=107> </a>
 				</div>
 				';
 			}

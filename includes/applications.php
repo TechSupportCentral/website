@@ -3,7 +3,7 @@ require 'includes/discord.php';
 require 'includes/config.php';
 
 $name = basename($_SERVER['PHP_SELF']);
-init("https://www.techsupportcentral.cf/" . $name, $client_id, $secret_id);
+init("https://www.techsupportcentral.org/" . $name, $client_id, $secret_id);
 if ($name == "appeal.php") {get_user(true);} else {get_user();}
 
 // Check if user's account creation and server join dates meet requirements

@@ -94,7 +94,7 @@
 				echo '
 				<div class="center">
 					<h1> Please log in before submitting your application. </h1>
-					<a href=' . url($client_id, "https://www.techsupportcentral.cf/support-team.php", "identify+guilds.members.read") . '> <img src="login.png", width=512, height=107> </a>
+					<a href=' . url($client_id, "https://www.techsupportcentral.org/support-team.php", "identify+guilds.members.read") . '> <img src="login.png", width=512, height=107> </a>
 				</div>
 				';
 			} else {
