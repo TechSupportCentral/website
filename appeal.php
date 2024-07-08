@@ -46,7 +46,7 @@
 			} elseif (isset($_SESSION['username']) && $submit) {
 				echo '<h2 style="text-align: center"> You have already submitted a ban appeal. <br> If it gets accepted, you will be notified. Please be patient. </h2>';
 			} elseif ($_GET['form'] == "done") {
-				echo '<h1 style="text-align: center; margin-left: 32px; margin-right: 32px"> Appeal sent successfully. <br><br> You will be notified about whether your appeal was accepted via the email you signed up for Discord with. </h1>';
+				echo '<h1 style="text-align: center; margin-left: 32px; margin-right: 32px"> Appeal sent successfully. <br><br> You will be notified of your appeal status via the email associated with your Discord account. </h1>';
 			} elseif ($_GET['form'] == "fail") {
 				echo '<h1 style="text-align: center"> Something went wrong sending the appeal. Please try again. </h1>';
 			} else {
