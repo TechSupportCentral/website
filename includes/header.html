@@ -1,8 +1,25 @@
 <img id="banner" src="/tsc-banner.jpg" alt="Tech Support Central Banner Logo">
 <ul id="menu">
-    <li><a href="/index.php">Home</a></li>
-    <li><a href="https://discord.gg/8JkS8xWgbU">Join Server</a></li>
-    <li><a href="/apply.php">Staff Applications</a></li>
-    <li><a href="/appeal.php">Ban Appeal</a></li>
-    <li><a href="#footer">Social Media</a></li>
+    <img id="hamburger" src="/hamburger.svg" alt="Hamburger Menu">
+    <script>
+        // Show or hide list when hamburger button is clicked
+        function toggleList() {
+            document.querySelector('#menu').classList.toggle('show');
+        }
+        document.getElementById('hamburger').onclick = toggleList;
+        // Color fade if social media link is clicked
+        function footerColorFade() {
+            const element = document.getElementById('footer');
+            // Change color, then change it back after 1s
+            element.classList.add('fade');
+            setTimeout(() => {
+                element.classList.remove('fade');
+            }, 1000);
+        }
+    </script>
+    <a href="/index.php"><li>Home</li></a>
+    <a href="https://discord.gg/8JkS8xWgbU"><li>Join Server</li></a>
+    <a href="/apply.php"><li>Staff Applications</li></a>
+    <a href="/appeal.php"><li>Ban Appeal</li></a>
+    <a href="#footer" onclick="footerColorFade()"><li>Social Media</li></a>
 </ul>

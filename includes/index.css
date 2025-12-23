@@ -1,0 +1,35 @@
+#content {
+    display: flex;
+    height: 500px;
+}
+.main-content {
+    padding: 20px;
+}
+.main-content li {
+    padding-bottom: 10px;
+}
+.sidebar {
+    width: 50%;
+    background-color: #00a0a0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#title {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #00a0a0;
+}
+.main-content h2 {
+    font-size: 1.25em;
+}
+/* Hide sidebar if width is too small */
+@media screen and (max-width: 1250px) {
+    .sidebar {
+        width: 0;
+    }
+    .sidebar iframe {
+        width: 0;
+    }
+}

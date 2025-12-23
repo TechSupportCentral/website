@@ -1,4 +1,4 @@
-html, body, #content {
+html, body {
     height: 100%;
 }
 #banner {
@@ -6,23 +6,6 @@ html, body, #content {
 }
 #content, #menu, #banner, #footer {
     margin: 0 auto;
-}
-@media screen and (min-width: 900px) {
-    #content, #menu, #banner, #footer {
-        width: 60%;
-    }
-}
-@media screen and (max-width: 900px) {
-    #content, #menu, #banner, #footer {
-        width: 95%;
-    }
-}
-body {
-    background-color: #333;
-}
-#content {
-    background-color: #fff;
-    font-family: "Arial", sans-serif;
 }
 #menu, #footer {
     display: flex;
@@ -39,15 +22,74 @@ body {
     list-style-type: none;
     padding: 20px;
 }
+#hamburger {
+    width: 8%;
+    height: auto;
+    padding: 16px 16px 0;
+    display: none;
+}
+/* Desktop */
+@media screen and (min-width: 900px) {
+    #content, #menu, #banner, #footer {
+        width: 60%;
+    }
+}
+/* Tablet and Phone */
+@media screen and (max-width: 900px) {
+    #content, #menu, #banner, #footer {
+        width: 95%;
+    }
+}
+/* Phone */
+@media screen and (max-width: 600px) {
+    #menu {
+        flex-direction: column;
+        overflow: hidden;
+        max-height: calc(7.38vw + 22px);
+        transition: max-height 0.5s ease-in-out;
+        padding-bottom: 10px;
+    }
+    #menu li {
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        padding: 10px 20px;
+    }
+    #menu.show {
+        max-height: 500px;
+    }
+    #menu.show li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    #hamburger {
+        display: block;
+    }
+    #hamburger:hover {
+        cursor: pointer;
+    }
+}
+body {
+    background-color: #333;
+}
+#content {
+    background-color: white;
+    font-family: "Arial", sans-serif;
+}
 #menu a {
     color: white;
     text-decoration: none;
 }
 #menu a:hover {
     color: MediumSpringGreen;
+    background-color: #888;
 }
 #footer {
     justify-content: center;
+    transition: background-color 0.5s ease-in-out;
+}
+#footer.fade {
+    background-color: #888;
 }
 #footer li {
     list-style-type: none;
