@@ -7,10 +7,10 @@
     <meta property="og:description" content="Free and fast tech support server with over 1000 members">
     <meta property="og:image" content="https://techsupportcentral.org/tsc.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/includes/styles.css">
+    <link rel="stylesheet" href="includes/styles.css">
     <?php
         if (isset($stylesheet)) {
-            echo '<link rel="stylesheet" href="/includes/' . $stylesheet . '">';
+            echo '<link rel="stylesheet" href="includes/' . $stylesheet . '">';
         }
     ?>
 </head>

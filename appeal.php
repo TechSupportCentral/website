@@ -1,3 +1,28 @@
+<?php
+    require 'scripts/auth.php';
+    if (!isset($_SESSION['username'])) {
+        header("Location: login.php?redir=appeal.php");
+        exit;
+    }
+    if (submission_check()) {
+        echo "<script>
+            window.onload = function() {
+                // Make a fake form to do a POST redirect
+                var form = document.createElement('form');
+                form.method = 'POST';
+                form.action = 'result.php';
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'status';
+                input.value = 'submissionCheckFail';
+                form.appendChild(input);
+                // Add form to document and immediately submit
+                document.body.appendChild(form);
+                form.submit();
+            }
+        </script>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <?php
@@ -14,11 +39,6 @@
                 <label for="appeal">Why do you disagree with the reasoning for your ban?</label>
                 <textarea id="appeal" name="appeal" rows="3" required></textarea>
                 <?php
-                    // TODO: Discord login
-                    $_SESSION['username'] = "test user";
-                    $_SESSION['user_id'] = 760604690010079282;
-                    $_SESSION['email'] = 'test@techsupportcentral.org';
-                    $_SESSION['user_avatar'] = '';
                     if (str_starts_with($_SESSION['user_avatar'], "a_")) {
                         $extension = ".gif";
                     } else {

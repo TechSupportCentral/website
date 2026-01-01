@@ -1,3 +1,40 @@
+<?php
+    require 'scripts/auth.php';
+    if (!isset($_SESSION['username'])) {
+        header("Location: login.php?redir=apply.php");
+        exit;
+    }
+    switch (age_check(15778800, 2629800)) {
+        case 0:
+            break;
+        case 1:
+            $status = 'ageCheckFail';
+            break;
+        case 2:
+            $status = 'joinCheckFail';
+    }
+    if (submission_check()) {
+        $status = 'submissionCheckFail';
+    }
+    if (isset($status)) {
+        echo "<script>
+            window.onload = function() {
+                // Make a fake form to do a POST redirect
+                var form = document.createElement('form');
+                form.method = 'POST';
+                form.action = 'result.php';
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'status';
+                input.value = '$status';
+                form.appendChild(input);
+                // Add form to document and immediately submit
+                document.body.appendChild(form);
+                form.submit();
+            }
+        </script>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <?php
@@ -15,7 +52,7 @@
                 <input type="radio" id="sp" name="type" value="sp">
                 <label for="sp">Support Team</label>
                 <?php
-                    require("includes/config.php");
+                    require('includes/config.php');
                     foreach ($application_questions as $questionName => $question) {
                         echo '<div class="hide';
                         if (str_starts_with($questionName, "mod")) {
@@ -39,10 +76,6 @@
                         }
                         echo '</div>';
                     }
-                    // TODO: Discord login
-                    $_SESSION['username'] = "test user";
-                    $_SESSION['user_id'] = 760604690010079282;
-                    $_SESSION['user_avatar'] = '';
                     if (str_starts_with($_SESSION['user_avatar'], "a_")) {
                         $extension = ".gif";
                     } else {

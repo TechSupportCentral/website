@@ -3,6 +3,7 @@ $client_id = "Insert client ID here";
 $secret_id = "Insert client secret here";
 $webhook_url = "Insert webhook url here";
 $db_file = "/path/to/database.sqlite";
+$site_root = "https://www.techsupportcentral.org/";
 
 $application_questions = [
     "mod1" => [
